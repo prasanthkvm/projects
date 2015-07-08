@@ -1,0 +1,23 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h2>Add to Guestbook</h2>
+    <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
+    <form name="form" ng-submit="vm.addnew()" role="form">
+       
+        <div class="form-group" ng-class="{ 'has-error': form.phone.$dirty && form.phone.$error.required }">
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="Text1" class="form-control" ng-model="vm.msg.phone" required />
+            <span ng-show="form.phone.$dirty && form.phone.$error.required" class="help-block">Phone required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.message.$dirty && form.message.$error.required }">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" class="form-control" ng-model="vm.msg.message" required ></textarea>
+            <span ng-show="form.message.$dirty && form.message.$error.required" class="help-block">Message is required</span>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Submit</button>
+            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a href="#/guestbook" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

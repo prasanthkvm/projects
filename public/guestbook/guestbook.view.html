@@ -1,0 +1,16 @@
+﻿<div class="col-md-6 col-md-offset-3">
+<div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
+<a class="btn btn-primary agbtn" href="#/addnew">Add to guestbook</a>
+<div class="panel panel-primary" ng-repeat="entry in vm.entries.data" >
+<div class="panel-header"></div>
+  <div class="panel-body">
+	<ul class="list-group">
+		<li class="list-group-item">User : <strong>{{entry.user}}</strong></li>
+		<li class="list-group-item">Phone : <strong>{{entry.phone}}</strong></li>
+		<li class="list-group-item">Message : <strong>{{entry.message}}</strong></li>
+	</ul>
+  </div>
+ 
+</div>
+
+</div>

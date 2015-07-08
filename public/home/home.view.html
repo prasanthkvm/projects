@@ -1,0 +1,54 @@
+﻿<form class="form-inline clearfix" role="form">
+  <div class="form-group">
+    <label for="states">Please select a State Code</label>
+	<select class="form-control" style="width:100px;" ng-model="selectedItem">
+<option ng-repeat="state in vm.allStatesAbbr.data">{{state}}</option>
+</select>
+
+  </div>
+  <div class="form-group">
+    
+   <button class="btn btn-default" ng-click="vm.GetStateDetails(selectedItem)">Get details</button> - OR -
+   <button class="btn btn-primary" ng-click="vm.loadAllStates()">Show All States</button>
+  </div>
+
+</form>
+<br />
+
+<div class="panel panel-primary smtiles" ng-repeat="state in vm.allStates.data" ng-show="vm.alltrigger">
+<div class="panel-header"></div>
+  <div class="panel-body">
+	<ul class="list-group">
+		<li class="list-group-item">State : <strong>{{state.name}}</strong></li>
+		<li class="list-group-item">Capital : <strong>{{state.capital}}</strong></li>
+		<li class="list-group-item">Most Populous city : <strong>{{state['most-populous-city']}}</strong></li>
+		<li class="list-group-item">Population : <strong>{{state.population}}</strong></li>
+		<li class="list-group-item">Square Miles : <strong>{{state['square-miles']}}</strong></li>
+		<li class="list-group-item">Time Zone 1 : <strong>{{state['time-zone-1']}}</strong></li>
+		<li class="list-group-item">TimeZone 2 : <strong>{{state['time-zone-2']}}</strong></li>
+		<li class="list-group-item">DST : <strong>{{state.dst}}</strong></li>
+
+	</ul>
+  </div>
+</div>
+
+
+<div class="panel panel-primary" ng-show="vm.trigger">
+<div class="panel-header"></div>
+  <div class="panel-body">
+	<ul class="list-group">
+		<li class="list-group-item">State : <strong>{{vm.SingleState.data.name}}</strong></li>
+		<li class="list-group-item">Capital : <strong>{{vm.SingleState.data.capital}}</strong></li>
+		<li class="list-group-item">Most Populous city : <strong>{{vm.SingleState.data['most-populous-city']}}</strong></li>
+		<li class="list-group-item">Population : <strong>{{vm.SingleState.data.population}}</strong></li>
+		<li class="list-group-item">Square Miles : <strong>{{vm.SingleState.data['square-miles']}}</strong></li>
+		<li class="list-group-item">Time Zone 1 : <strong>{{vm.SingleState.data['time-zone-1']}}</strong></li>
+		<li class="list-group-item">TimeZone 2 : <strong>{{vm.SingleState.data['time-zone-2']}}</strong></li>
+		<li class="list-group-item">DST : <strong>{{vm.SingleState.data.dst}}</strong></li>
+
+	</ul>
+  </div>
+</div>
+
+
+
